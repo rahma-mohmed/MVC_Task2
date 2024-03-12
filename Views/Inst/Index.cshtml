@@ -1,0 +1,27 @@
+﻿@model List<Instructor>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Salary</th>
+            <th>Address</th>
+            <th>Department</th>
+            <th>Course</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td><img src="\Images\@item.Image"></td>
+                <td>@item.Salary</td>
+                <td>@item.Address</td>
+                <td><a asp-controller="Inst" asp-action="DepartmentV" asp-route-id="@item.Dept_id">Depatment</a></td>
+                <td><a asp-controller="Inst" asp-action="CourseV" asp-route-id="@item.Crs_id">Course</a></td>
+            </tr>
+        }
+    </thead>
+</table>

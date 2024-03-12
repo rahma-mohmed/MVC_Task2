@@ -1,0 +1,43 @@
+﻿@model List<Course>
+
+<style>
+    .card {
+        box-sizing: border-box;
+        width: 290px;
+        height: 300px;
+        background: rgba(20, 200, 220, 0.58);
+        border: 1px solid white;
+        box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(6px);
+        border-radius: 17px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        font-weight: bolder;
+        color: black;
+        padding:50px;
+        margin : 25px;
+
+    }
+
+        .card:hover {
+            border: 1px solid black;
+            transform: scale(1.05);
+        }
+
+        .card:active {
+            transform: scale(0.95) rotateZ(1.7deg);
+        }
+</style>
+
+@foreach(var item in Model)
+{
+    <div class="card">
+        <p> <h3>(@item.Id) @item.Name </h3><br>MinDegree: @item.minDegree<br>Degree: @item.Degree</p>
+    </div>
+
+}
